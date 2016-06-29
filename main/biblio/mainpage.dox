@@ -1,0 +1,136 @@
+/*! \mainpage  SDLS and net function documentation 
+ *
+ *  \b Read the readme.txt in top of the zip.
+ * 
+ * \n
+ * \section begin 1) how to begin
+ * in main folder  double clic on \b testForUser.cbp (you \b must have installed code:block before) \n
+ * this should open \b code:block and the project \n
+ * copy and paste code below inside file \b testForUser.c,, compile and run... Enjoy
+ * \section first 2) shape,font and images
+ *
+ * This program show how to use texture and shape and display for 3s window created \n
+ *
+ *\code // create window with a title
+ * int main(int argc, char ** argv){
+ *  SDLS_init("Hello World");
+ * // open image and copy to window
+ *  SDL_Texture * texture_fond =SDLS_loadImage("images//elephant.png"); // open image
+ *  SDLS_copyTexture(texture_fond, 0,0);// copy in video cache buffer in the top left
+ * // create shape and copy to video cache buffer (automatic)
+ *  SDLS_setColor(255,0,0); //  red color
+ *  SDLS_drawLineRect(50,50,100,20); // rectangle in 50,50 size 100x20
+ * // open Font and copy to video cache buffer
+ *  TTF_Font * ttfFont= SDLS_loadFont("fonts\\arial.ttf",15);// load font in RAM, size 15
+ *  SDL_Texture *texture_text2= SDLS_loadText(ttfFont,"text to print", 255,255,255); // copy text to print (in white color) to texture
+ *  SDLS_copyTexture(texture_text2,200,100); // copy texture to window on position 200,100
+ * // copy  video cache buffer in video buffer (double buffering)
+ *  SDLS_displayAll(); // copy cached Video Buffer to Video buffer
+ *  SDL_Delay(5000); // wait 5s to see the window
+ *  SDLS_cleanup();  // erase memory
+ * }
+ *\endcode
+ *
+ * \section second 3) animating with mouse clic and key UP/DOWN/LEFT/RIGHT
+ *  use of SDL_WaitEvent and changing position of spaceship with mouse clic and keyboard.
+ *\code 
+ * int main(int argc, char ** argv){
+ *  int x=100,y=100, quit=0;
+ *  SDL_Event event;
+ * // create window with a title
+ *  SDLS_init("Hello World");
+ * // open image and copy to window
+ *  SDL_Texture * texture_vaisseau = SDLS_loadImage("images//spaceship.png"); // load image texture in RAM
+ * // handle events
+ *  while (!quit)
+ *  {
+ *     SDL_WaitEvent(&event); // c'est bloquant...
+ *     switch (event.type){
+ *       case SDL_QUIT:
+ *         quit = true;
+ *         break;
+ *       case SDL_MOUSEBUTTONDOWN : // sur le clic de la souris on bouge la forme
+ *          if( event.button.button == SDL_BUTTON_LEFT ){
+ *             x=event.button.x;
+ *             y=event.button.y;
+ *          }
+ *          break;
+ *       case SDL_KEYDOWN:       // sur l'utilisation du clavier on bouge la forme
+ *          switch (event.key.keysym.sym){
+ *            case SDLK_LEFT:--x;break;
+ *            case SDLK_RIGHT:++x;break;
+ *            case SDLK_UP: --y;break;
+ *            case SDLK_DOWN:++y; break;
+ *         }
+ *     }
+ *	   SDLS_eraseWithBackgroundColor(255,255,255); // couleur du fond en blanc
+ *     SDLS_copyTexture(texture_vaisseau,x,y);     // place le vaisseau en x,y
+ *     SDLS_displayAll(); // copy cached Video Buffer to Video buffer
+ *  }
+ *  SDLS_cleanup();  // erase memory
+ * }
+ * \endcode
+ *
+ * \section third  4) Timer animation, rotating spaceship
+ * use of timer to animate an image  spaceship
+ *\code
+ * //this function is called each 100ms and send an event to the main...
+ * Uint32 my_callbackfunc(Uint32 interval, void *param)
+ * {
+ *   SDL_Event event;
+ *   SDL_UserEvent userevent;
+ *
+ *     /* In this example, our callback pushes an SDL_USEREVENT event
+ *    into the queue */
+ *
+ *   userevent.type = SDL_USEREVENT;
+ *   userevent.code = 0;
+ *   userevent.data1 = NULL;
+ *   userevent.data2 = NULL;
+ *
+ *   event.type = SDL_USEREVENT;
+ *   event.user = userevent;
+ *
+ *   SDL_PushEvent(&event);
+ *   return(interval);
+ * }
+ * int main(int argc, char ** argv){
+ *  int quit=0,angle=0;
+ *  SDL_Event event;
+ * // create window with a title
+ *  SDLS_init("Hello World");
+ * // open image and copy to window
+ *  SDL_Texture * texture_vaisseau = SDLS_loadImage("images//spaceship.png"); // load image texture in RAM
+ *  Uint32 delay = 100;  /* To round it down to the nearest 100 ms */
+ *  SDL_TimerID my_timer_id = SDL_AddTimer(delay, my_callbackfunc, NULL); //init timer
+ * // handle events
+ *  while (!quit)
+ *  {
+ *     SDL_WaitEvent(&event); // c'est bloquant...
+ *     if(event.type==SDL_QUIT)
+ *       quit = true;
+ *     if(event.type== SDL_USEREVENT){
+ *        angle+=4;
+ *        if(angle>360)
+ *             angle=0;	
+ *     }
+ * 
+ *  
+ *    SDLS_eraseWithBackgroundColor(255,255,255); // couleur du fond en blanc
+ *    SDLS_copyAndRotateTexture(texture_vaisseau,SDLS_getScreenWidth()-100,50,angle);
+ *    SDLS_displayAll(); // copy cached Video Buffer to Video buffer
+ *  }
+ *  SDLS_cleanup();  // erase memory
+ * }
+ * \endcode
+ 
+ 
+ 
+ 
+ 
+ 
+ */
+
+ 
+ 
+ 

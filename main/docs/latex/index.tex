@@ -1,0 +1,125 @@
+{\bfseries Read} the readme.\+txt in top of the zip.
+
+~\newline
+\hypertarget{index_begin}{}\section{1) how to begin}\label{index_begin}
+in main folder double clic on {\bfseries test\+For\+User.\+cbp} (you {\bfseries must} have installed code\+:block before) ~\newline
+ this should open {\bfseries code\+:block} and the project ~\newline
+ copy and paste code below inside file {\bfseries test\+For\+User.\+c},, compile and run... Enjoy \hypertarget{index_first}{}\section{2) shape,font and images}\label{index_first}
+This program show how to use texture and shape and display for 3s window created ~\newline
+ 
+\begin{DoxyCode}
+\textcolor{comment}{// create window with a title}
+ \textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} ** argv)\{
+  \hyperlink{_s_d_l_s_8c_a75205531dbfd4d3a3166e245227b9c12}{SDLS\_init}(\textcolor{stringliteral}{"Hello World"});
+ \textcolor{comment}{// open image and copy to window}
+  SDL\_Texture * texture\_fond =\hyperlink{_s_d_l_s_8c_ad6c27fd6e5502847ca73fb30f990cf0a}{SDLS\_loadImage}(\textcolor{stringliteral}{"images//elephant.png"}); \textcolor{comment}{// open image}
+  \hyperlink{_s_d_l_s_8c_a8a47ba62fed8a205c80cc93f521cb2e2}{SDLS\_copyTexture}(texture\_fond, 0,0);\textcolor{comment}{// copy in video cache buffer in the top left}
+ \textcolor{comment}{// create shape and copy to video cache buffer (automatic)}
+  \hyperlink{_s_d_l_s_8c_a9ca4cfe7300c96dc8e368c40eee123cd}{SDLS\_setColor}(255,0,0); \textcolor{comment}{//  red color}
+  \hyperlink{_s_d_l_s_8c_aa33fb0d50840e9163294cc07409f7f83}{SDLS\_drawLineRect}(50,50,100,20); \textcolor{comment}{// rectangle in 50,50 size 100x20}
+ \textcolor{comment}{// open Font and copy to video cache buffer}
+  TTF\_Font * ttfFont= \hyperlink{_s_d_l_s_8c_a726e1ef2a32862e250398da12718e007}{SDLS\_loadFont}(\textcolor{stringliteral}{"fonts\(\backslash\)\(\backslash\)arial.ttf"},15);\textcolor{comment}{// load font in RAM, size 15}
+  SDL\_Texture *texture\_text2= \hyperlink{_s_d_l_s_8c_ad8193a9d3dd61d9811b17cee936f7507}{SDLS\_loadText}(ttfFont,\textcolor{stringliteral}{"text to print"}, 255,255,255); \textcolor{comment}{// copy
+       text to print (in white color) to texture}
+  \hyperlink{_s_d_l_s_8c_a8a47ba62fed8a205c80cc93f521cb2e2}{SDLS\_copyTexture}(texture\_text2,200,100); \textcolor{comment}{// copy texture to window on position 200,100}
+ \textcolor{comment}{// copy  video cache buffer in video buffer (double buffering)}
+  \hyperlink{_s_d_l_s_8c_a139692381ca40eb058ee477b4f561189}{SDLS\_displayAll}(); \textcolor{comment}{// copy cached Video Buffer to Video buffer}
+  SDL\_Delay(5000); \textcolor{comment}{// wait 5s to see the window}
+  \hyperlink{_s_d_l_s_8c_aacc824d008ac615b82cc715c567ff91a}{SDLS\_cleanup}();  \textcolor{comment}{// erase memory}
+ \}
+\end{DoxyCode}
+\hypertarget{index_second}{}\section{3) animating with mouse clic and key U\+P/\+D\+O\+W\+N/\+L\+E\+F\+T/\+R\+I\+G\+HT}\label{index_second}
+use of S\+D\+L\+\_\+\+Wait\+Event and changing position of spaceship with mouse clic and keyboard. 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} ** argv)\{
+ \textcolor{keywordtype}{int} x=100,y=100, quit=0;
+ SDL\_Event event;
+\textcolor{comment}{// create window with a title}
+ \hyperlink{_s_d_l_s_8c_a75205531dbfd4d3a3166e245227b9c12}{SDLS\_init}(\textcolor{stringliteral}{"Hello World"});
+\textcolor{comment}{// open image and copy to window}
+ SDL\_Texture * texture\_vaisseau = \hyperlink{_s_d_l_s_8c_ad6c27fd6e5502847ca73fb30f990cf0a}{SDLS\_loadImage}(\textcolor{stringliteral}{"images//spaceship.png"}); \textcolor{comment}{// load image
+       texture in RAM}
+\textcolor{comment}{// handle events}
+ \textcolor{keywordflow}{while} (!quit)
+ \{
+    SDL\_WaitEvent(&event); \textcolor{comment}{// c'est bloquant...}
+    \textcolor{keywordflow}{switch} (event.type)\{
+      \textcolor{keywordflow}{case} SDL\_QUIT:
+        quit = \textcolor{keyword}{true};
+        \textcolor{keywordflow}{break};
+      \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN : \textcolor{comment}{// sur le clic de la souris on bouge la forme}
+         \textcolor{keywordflow}{if}( event.button.button == SDL\_BUTTON\_LEFT )\{
+            x=\textcolor{keyword}{event}.button.x;
+            y=\textcolor{keyword}{event}.button.y;
+         \}
+         \textcolor{keywordflow}{break};
+      \textcolor{keywordflow}{case} SDL\_KEYDOWN:       \textcolor{comment}{// sur l'utilisation du clavier on bouge la forme}
+         \textcolor{keywordflow}{switch} (event.key.keysym.sym)\{
+           \textcolor{keywordflow}{case} SDLK\_LEFT:--x;\textcolor{keywordflow}{break};
+           \textcolor{keywordflow}{case} SDLK\_RIGHT:++x;\textcolor{keywordflow}{break};
+           \textcolor{keywordflow}{case} SDLK\_UP: --y;\textcolor{keywordflow}{break};
+           \textcolor{keywordflow}{case} SDLK\_DOWN:++y; \textcolor{keywordflow}{break};
+        \}
+    \}
+     \hyperlink{_s_d_l_s_8c_aa0cca2ad329a916f149af068671bac0c}{SDLS\_eraseWithBackgroundColor}(255,255,255); \textcolor{comment}{// couleur du fond en blanc}
+    \hyperlink{_s_d_l_s_8c_a8a47ba62fed8a205c80cc93f521cb2e2}{SDLS\_copyTexture}(texture\_vaisseau,x,y);     \textcolor{comment}{// place le vaisseau en x,y}
+    \hyperlink{_s_d_l_s_8c_a139692381ca40eb058ee477b4f561189}{SDLS\_displayAll}(); \textcolor{comment}{// copy cached Video Buffer to Video buffer}
+ \}
+ \hyperlink{_s_d_l_s_8c_aacc824d008ac615b82cc715c567ff91a}{SDLS\_cleanup}();  \textcolor{comment}{// erase memory}
+\}
+\end{DoxyCode}
+\hypertarget{index_third}{}\section{4) Timer animation, rotating spaceship}\label{index_third}
+use of timer to animate an image spaceship 
+\begin{DoxyCode}
+  \textcolor{comment}{//this function is called each 100ms and send an event to the main...}
+  Uint32 my\_callbackfunc(Uint32 interval, \textcolor{keywordtype}{void} *param)
+  \{
+    SDL\_Event event;
+    SDL\_UserEvent userevent;
+ 
+      \textcolor{comment}{/* In this example, our callback pushes an SDL\_USEREVENT event}
+\textcolor{comment}{*    into the queue */}
+ 
+    userevent.type = SDL\_USEREVENT;
+    userevent.code = 0;
+    userevent.data1 = NULL;
+    userevent.data2 = NULL;
+ 
+    \textcolor{keyword}{event}.type = SDL\_USEREVENT;
+    \textcolor{keyword}{event}.user = userevent;
+ 
+    SDL\_PushEvent(&event);
+    \textcolor{keywordflow}{return}(interval);
+  \}
+  \textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} ** argv)\{
+   \textcolor{keywordtype}{int} quit=0,angle=0;
+   SDL\_Event event;
+  \textcolor{comment}{// create window with a title}
+   \hyperlink{_s_d_l_s_8c_a75205531dbfd4d3a3166e245227b9c12}{SDLS\_init}(\textcolor{stringliteral}{"Hello World"});
+  \textcolor{comment}{// open image and copy to window}
+   SDL\_Texture * texture\_vaisseau = \hyperlink{_s_d_l_s_8c_ad6c27fd6e5502847ca73fb30f990cf0a}{SDLS\_loadImage}(\textcolor{stringliteral}{"images//spaceship.png"}); \textcolor{comment}{// load image
+       texture in RAM}
+   Uint32 delay = 100;  \textcolor{comment}{/* To round it down to the nearest 100 ms */}
+   SDL\_TimerID my\_timer\_id = SDL\_AddTimer(delay, my\_callbackfunc, NULL); \textcolor{comment}{//init timer}
+  \textcolor{comment}{// handle events}
+   \textcolor{keywordflow}{while} (!quit)
+   \{
+      SDL\_WaitEvent(&event); \textcolor{comment}{// c'est bloquant...}
+      \textcolor{keywordflow}{if}(event.type==SDL\_QUIT)
+        quit = \textcolor{keyword}{true};
+      \textcolor{keywordflow}{if}(event.type== SDL\_USEREVENT)\{
+         angle+=4;
+         \textcolor{keywordflow}{if}(angle>360)
+              angle=0;  
+      \}
+  
+   
+     \hyperlink{_s_d_l_s_8c_aa0cca2ad329a916f149af068671bac0c}{SDLS\_eraseWithBackgroundColor}(255,255,255); \textcolor{comment}{// couleur du fond en blanc}
+     \hyperlink{_s_d_l_s_8c_ac3b4e61ce8e03159ecd5894f1495e221}{SDLS\_copyAndRotateTexture}(texture\_vaisseau,
+      \hyperlink{_s_d_l_s_8c_af8e50bb4d9c1087d9edfc6b68924f3f8}{SDLS\_getScreenWidth}()-100,50,angle);
+     \hyperlink{_s_d_l_s_8c_a139692381ca40eb058ee477b4f561189}{SDLS\_displayAll}(); \textcolor{comment}{// copy cached Video Buffer to Video buffer}
+   \}
+   \hyperlink{_s_d_l_s_8c_aacc824d008ac615b82cc715c567ff91a}{SDLS\_cleanup}();  \textcolor{comment}{// erase memory}
+  \}
+\end{DoxyCode}
+ 

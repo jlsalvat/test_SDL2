@@ -1,0 +1,745 @@
+\hypertarget{_s_d_l_s_8c}{}\section{C\+:/\+Users/jsalvat/\+Dropbox/iut\+\_\+courant/licence A\+II E\+E/\+M1-\/5 info/prog/example/test\+\_\+\+S\+D\+L2/main/biblio/\+S\+D\+LS.c File Reference}
+\label{_s_d_l_s_8c}\index{C\+:/\+Users/jsalvat/\+Dropbox/iut\+\_\+courant/licence A\+I\+I E\+E/\+M1-\/5 info/prog/example/test\+\_\+\+S\+D\+L2/main/biblio/\+S\+D\+L\+S.\+c@{C\+:/\+Users/jsalvat/\+Dropbox/iut\+\_\+courant/licence A\+I\+I E\+E/\+M1-\/5 info/prog/example/test\+\_\+\+S\+D\+L2/main/biblio/\+S\+D\+L\+S.\+c}}
+
+
+using S\+D\+L2 in a simplified way in C , only one window use  
+
+
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L\+\_\+image.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L\+\_\+ttf.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L2\+\_\+gfx\+Primitives.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_s_d_l_s_8c_a1b9b252ebe8fde389d7122a715cd834b}{S\+D\+L\+S\+\_\+get\+Screen\+Height} ()
+\begin{DoxyCompactList}\small\item\em getting Height -\/$>$ 480 px by default \end{DoxyCompactList}\item 
+int \hyperlink{_s_d_l_s_8c_af8e50bb4d9c1087d9edfc6b68924f3f8}{S\+D\+L\+S\+\_\+get\+Screen\+Width} ()
+\begin{DoxyCompactList}\small\item\em getting width -\/$>$ 640 px by default \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \hyperlink{_s_d_l_s_8c_a1371e0caed6f9405b302f544175f7e0a}{S\+D\+L\+S\+\_\+get\+Renderer} ()
+\begin{DoxyCompactList}\small\item\em getting the renderer of window displayed, you need this param to display shape with S\+DL library if you don\textquotesingle{}t want use S\+D\+LS function \end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_aa6e05191195f8fde8679e92f6b575e50}{S\+D\+L\+S\+\_\+change\+Color} (S\+D\+L\+\_\+\+Texture $\ast$text, int r, int g, int b)
+\begin{DoxyCompactList}\small\item\em changing color of image texture, red, green, blue after opening an image, you can dark more of less image with this function \end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_a75205531dbfd4d3a3166e245227b9c12}{S\+D\+L\+S\+\_\+init} (const char $\ast$titre)
+\begin{DoxyCompactList}\small\item\em create window and renderer context, first function to call in main \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{_s_d_l_s_8c_ad6c27fd6e5502847ca73fb30f990cf0a}{S\+D\+L\+S\+\_\+load\+Image} (char $\ast$name)
+\begin{DoxyCompactList}\small\item\em loading image in a texture (V\+R\+AM), image can be bmp, png, jpg,... format ~\newline
+Example \+: \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Rect \hyperlink{_s_d_l_s_8c_a06b7cd0886525ff5480b8e90a5aaf684}{S\+D\+L\+S\+\_\+draw\+Fill\+Rect} (int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em drawing a filled rectangle in window from position x,y first and size w$\ast$h ~\newline
+ Example \+: setting color and drawing line rectangle \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Rect \hyperlink{_s_d_l_s_8c_aa33fb0d50840e9163294cc07409f7f83}{S\+D\+L\+S\+\_\+draw\+Line\+Rect} (int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em drawing a line rectangle in window from position x,y first and size w$\ast$h ~\newline
+ Example \+: setting color and drawing line rectangle \end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_a94a8471f3e10dc229e7a0349eb91f4c1}{S\+D\+L\+S\+\_\+draw\+Line} (int x1, int y1, int x2, int y2)
+\begin{DoxyCompactList}\small\item\em drawing a line in window from x1,y1 first point to second point x2,y2 ~\newline
+ Example \+: setting color and drawing line \end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_aa93e468e9c99f55d191cb5ccff925ab5}{S\+D\+L\+S\+\_\+draw\+Point} (int x, int y)
+\begin{DoxyCompactList}\small\item\em drawing a pixel in window in position x,y ~\newline
+\end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_aa0cca2ad329a916f149af068671bac0c}{S\+D\+L\+S\+\_\+erase\+With\+Background\+Color} (int r, int g, int b)
+\begin{DoxyCompactList}\small\item\em Erase window with a background color ~\newline
+ Use this function before drawing texture or shape ~\newline
+. \end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_a9ca4cfe7300c96dc8e368c40eee123cd}{S\+D\+L\+S\+\_\+set\+Color} (int r, int g, int b)
+\begin{DoxyCompactList}\small\item\em choosing a color for the next shape ~\newline
+ Use this function before drawing texture or shape ~\newline
+\end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Rect \hyperlink{_s_d_l_s_8c_a8a47ba62fed8a205c80cc93f521cb2e2}{S\+D\+L\+S\+\_\+copy\+Texture} (S\+D\+L\+\_\+\+Texture $\ast$tex, int x, int y)
+\begin{DoxyCompactList}\small\item\em copy texture to renderer ~\newline
+ Use this function to draw an image texture in window ~\newline
+\end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_aa4a1a3141835696ba91a44f0e520791f}{S\+D\+L\+S\+\_\+copy\+Texture\+Ex} (S\+D\+L\+\_\+\+Texture $\ast$tex, S\+D\+L\+\_\+\+Rect src, S\+D\+L\+\_\+\+Rect dst)
+\begin{DoxyCompactList}\small\item\em copy only a part of image source texture (S\+D\+L\+\_\+\+Rect src) to a to a (S\+D\+L\+\_\+\+Rect dst) renderer ~\newline
+ Use this function to draw a part of image texture in window ~\newline
+\end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Rect \hyperlink{_s_d_l_s_8c_ad20b3549a1f7dbbfca66b2f237dec62f}{S\+D\+L\+S\+\_\+copy\+And\+Flip\+Texture} (S\+D\+L\+\_\+\+Texture $\ast$tex, int x, int y, int flip)
+\begin{DoxyCompactList}\small\item\em copy and flip texture to renderer , same as S\+D\+L\+\_\+\+Rect S\+D\+L\+S\+\_\+copy\+Texture with adding flip option ~\newline
+ Use this function to draw an image texture with a flip in window ~\newline
+\end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Rect \hyperlink{_s_d_l_s_8c_ac3b4e61ce8e03159ecd5894f1495e221}{S\+D\+L\+S\+\_\+copy\+And\+Rotate\+Texture} (S\+D\+L\+\_\+\+Texture $\ast$tex, int x, int y, int angle)
+\begin{DoxyCompactList}\small\item\em copy and rotate texture to renderer , same as S\+D\+L\+\_\+\+Rect S\+D\+L\+S\+\_\+copy\+Texture with adding rotation option ~\newline
+ Use this function to draw an image texture with a rotation in window ~\newline
+\end{DoxyCompactList}\item 
+T\+T\+F\+\_\+\+Font $\ast$ \hyperlink{_s_d_l_s_8c_a726e1ef2a32862e250398da12718e007}{S\+D\+L\+S\+\_\+load\+Font} (char $\ast$font, int taille)
+\begin{DoxyCompactList}\small\item\em Loading Font before displaying a text ~\newline
+ Use this function to load a font before use of S\+D\+L\+S\+\_\+load\+Text to display a text in window ~\newline
+. \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{_s_d_l_s_8c_ad8193a9d3dd61d9811b17cee936f7507}{S\+D\+L\+S\+\_\+load\+Text} (T\+T\+F\+\_\+\+Font $\ast$font, char $\ast$sz, int r, int g, int b)
+\begin{DoxyCompactList}\small\item\em putting text into texture ~\newline
+ Use this function to load text to display in window, you need to load font before using this function ~\newline
+\end{DoxyCompactList}\item 
+int \hyperlink{_s_d_l_s_8c_aeac34eae4a52f69fbfd869b7a5b8fd48}{S\+D\+L\+S\+\_\+getpixels} (Uint32 $\ast$pixels, int w, int h)
+\begin{DoxyCompactList}\small\item\em getting an array of pixel of window displayed ~\newline
+ You can use this function with S\+D\+L\+S\+\_\+putpixels and change pixels of your window ~\newline
+\end{DoxyCompactList}\item 
+int \hyperlink{_s_d_l_s_8c_a188d3ef96957fdc831fc5b8574af376f}{S\+D\+L\+S\+\_\+putpixels} (Uint32 $\ast$pixels, int w, int h)
+\begin{DoxyCompactList}\small\item\em putting an array of pixel in window displayed ~\newline
+ see S\+L\+D\+S\+\_\+getpixels to see an example ~\newline
+\end{DoxyCompactList}\item 
+Uint32 \hyperlink{_s_d_l_s_8c_a5d8151fcc843fcd180aad0bd3240f7c3}{S\+D\+L\+S\+\_\+get\+Color} (int r, int g, int b)
+\begin{DoxyCompactList}\small\item\em get Uint32 color code from R,G,B parameter ~\newline
+\end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_adb1c88348410e9557e3552bcb9e0e714}{S\+D\+L\+S\+\_\+sombre} ()\hypertarget{_s_d_l_s_8c_adb1c88348410e9557e3552bcb9e0e714}{}\label{_s_d_l_s_8c_adb1c88348410e9557e3552bcb9e0e714}
+
+\begin{DoxyCompactList}\small\item\em darking all the window~\newline
+\end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_a139692381ca40eb058ee477b4f561189}{S\+D\+L\+S\+\_\+display\+All} ()
+\begin{DoxyCompactList}\small\item\em use this function after creating shape and texture to display in window~\newline
+ use of double buffering \+: all operation before this function are put in video R\+AM but not displayed \end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_aacc824d008ac615b82cc715c567ff91a}{S\+D\+L\+S\+\_\+cleanup} ()\hypertarget{_s_d_l_s_8c_aacc824d008ac615b82cc715c567ff91a}{}\label{_s_d_l_s_8c_aacc824d008ac615b82cc715c567ff91a}
+
+\begin{DoxyCompactList}\small\item\em erase memory used by S\+DL to access video memory \end{DoxyCompactList}\item 
+void \hyperlink{_s_d_l_s_8c_a23952e523fda1dd776e59600e1dc8194}{create\+Shapes} ()\hypertarget{_s_d_l_s_8c_a23952e523fda1dd776e59600e1dc8194}{}\label{_s_d_l_s_8c_a23952e523fda1dd776e59600e1dc8194}
+
+\begin{DoxyCompactList}\small\item\em example of use of primitive gfx shapes, thick Lines, circles, roundedrectangle, triangle, bezier courbe ~\newline
+documentation \href{http://www.ferzkopp.net/Software/SDL2_gfx/Docs/html/_s_d_l2__gfx_primitives_8h.html}{\tt http\+://www.\+ferzkopp.\+net/\+Software/\+S\+D\+L2\+\_\+gfx/\+Docs/html/\+\_\+s\+\_\+d\+\_\+l2\+\_\+\+\_\+gfx\+\_\+primitives\+\_\+8h.\+html} ~\newline
+see source code of void \hyperlink{_s_d_l_s_8c_a23952e523fda1dd776e59600e1dc8194}{create\+Shapes()} to see how to use in your code \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int {\bfseries S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH} =680\hypertarget{_s_d_l_s_8c_a3482785bd2a4c8b307f9e0b6f54e2c36}{}\label{_s_d_l_s_8c_a3482785bd2a4c8b307f9e0b6f54e2c36}
+
+\item 
+const int {\bfseries S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT} =480\hypertarget{_s_d_l_s_8c_ab454541ae58bcf6555e8d723b1eb95e7}{}\label{_s_d_l_s_8c_ab454541ae58bcf6555e8d723b1eb95e7}
+
+\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ {\bfseries g\+Renderer} = N\+U\+LL\hypertarget{_s_d_l_s_8c_a4735638969a524c4ac90a88f23c59a1f}{}\label{_s_d_l_s_8c_a4735638969a524c4ac90a88f23c59a1f}
+
+\item 
+S\+D\+L\+\_\+\+Window $\ast$ {\bfseries g\+Window} =N\+U\+LL\hypertarget{_s_d_l_s_8c_a222f53a6a442d8f716dffd665e83528a}{}\label{_s_d_l_s_8c_a222f53a6a442d8f716dffd665e83528a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+using S\+D\+L2 in a simplified way in C , only one window use 
+
+\begin{DoxyAuthor}{Author}
+J\+LS 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11 June 2016
+\end{DoxyDate}
+functions for init, change color, create textures from image or creating shapes, for use in developping 2D Game with S\+D\+L2 multiplatform library 
+
+\subsection{Function Documentation}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+change\+Color@{S\+D\+L\+S\+\_\+change\+Color}}
+\index{S\+D\+L\+S\+\_\+change\+Color@{S\+D\+L\+S\+\_\+change\+Color}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+change\+Color(\+S\+D\+L\+\_\+\+Texture $\ast$text, int r, int g, int b)}{SDLS_changeColor(SDL_Texture *text, int r, int g, int b)}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+D\+L\+S\+\_\+change\+Color (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Texture $\ast$}]{text, }
+\item[{int}]{r, }
+\item[{int}]{g, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_aa6e05191195f8fde8679e92f6b575e50}{}\label{_s_d_l_s_8c_aa6e05191195f8fde8679e92f6b575e50}
+
+
+changing color of image texture, red, green, blue after opening an image, you can dark more of less image with this function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & texture, r \+: red (0,255), g \+: green (0,255), b blue (0,255) \\
+\hline
+\end{DoxyParams}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+copy\+And\+Flip\+Texture@{S\+D\+L\+S\+\_\+copy\+And\+Flip\+Texture}}
+\index{S\+D\+L\+S\+\_\+copy\+And\+Flip\+Texture@{S\+D\+L\+S\+\_\+copy\+And\+Flip\+Texture}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+copy\+And\+Flip\+Texture(\+S\+D\+L\+\_\+\+Texture $\ast$tex, int x, int y, int flip)}{SDLS_copyAndFlipTexture(SDL_Texture *tex, int x, int y, int flip)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Rect S\+D\+L\+S\+\_\+copy\+And\+Flip\+Texture (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Texture $\ast$}]{tex, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{flip}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_ad20b3549a1f7dbbfca66b2f237dec62f}{}\label{_s_d_l_s_8c_ad20b3549a1f7dbbfca66b2f237dec62f}
+
+
+copy and flip texture to renderer , same as S\+D\+L\+\_\+\+Rect S\+D\+L\+S\+\_\+copy\+Texture with adding flip option ~\newline
+ Use this function to draw an image texture with a flip in window ~\newline
+
+
+
+\begin{DoxyCode}
+1 SDL\_Texture * texture\_vaisseau = SDLS\_loadImage("images//spaceship.png"); // load image texture in RAM
+2 SDLS\_copyAndRotateTexture(texture\_vaisseau,100,200,VERTICAL); // flip and copy to Video Buffer
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tex} & texture to copy to window \\
+\hline
+{\em x} & position of texture in windows \\
+\hline
+{\em y} & position of texture in windows \\
+\hline
+{\em vertical} & \+: use S\+D\+L\+\_\+\+F\+L\+I\+P\+\_\+\+V\+E\+R\+T\+I\+C\+AL or S\+D\+L\+\_\+\+F\+L\+I\+P\+\_\+\+H\+O\+R\+I\+Z\+O\+N\+T\+AL to type of flip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+D\+L\+\_\+\+Rect rectangle created from texture 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+copy\+And\+Rotate\+Texture@{S\+D\+L\+S\+\_\+copy\+And\+Rotate\+Texture}}
+\index{S\+D\+L\+S\+\_\+copy\+And\+Rotate\+Texture@{S\+D\+L\+S\+\_\+copy\+And\+Rotate\+Texture}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+copy\+And\+Rotate\+Texture(\+S\+D\+L\+\_\+\+Texture $\ast$tex, int x, int y, int angle)}{SDLS_copyAndRotateTexture(SDL_Texture *tex, int x, int y, int angle)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Rect S\+D\+L\+S\+\_\+copy\+And\+Rotate\+Texture (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Texture $\ast$}]{tex, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{angle}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_ac3b4e61ce8e03159ecd5894f1495e221}{}\label{_s_d_l_s_8c_ac3b4e61ce8e03159ecd5894f1495e221}
+
+
+copy and rotate texture to renderer , same as S\+D\+L\+\_\+\+Rect S\+D\+L\+S\+\_\+copy\+Texture with adding rotation option ~\newline
+ Use this function to draw an image texture with a rotation in window ~\newline
+
+
+
+\begin{DoxyCode}
+1 SDL\_Texture * texture\_vaisseau = SDLS\_loadImage("images//spaceship.png"); // load image texture in RAM
+2 SDLS\_copyAndRotateTexture(texture\_vaisseau,100,200,90); // rotate image of 90° and copy to Video Buffer
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tex} & texture to copy to window \\
+\hline
+{\em x} & position of texture in windows \\
+\hline
+{\em y} & position of texture in windows \\
+\hline
+{\em angle} & of rotation \+: use from 0 to 360° or -\/180° to 180° \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+D\+L\+\_\+\+Rect rectangle created from texture 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+copy\+Texture@{S\+D\+L\+S\+\_\+copy\+Texture}}
+\index{S\+D\+L\+S\+\_\+copy\+Texture@{S\+D\+L\+S\+\_\+copy\+Texture}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+copy\+Texture(\+S\+D\+L\+\_\+\+Texture $\ast$tex, int x, int y)}{SDLS_copyTexture(SDL_Texture *tex, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Rect S\+D\+L\+S\+\_\+copy\+Texture (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Texture $\ast$}]{tex, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a8a47ba62fed8a205c80cc93f521cb2e2}{}\label{_s_d_l_s_8c_a8a47ba62fed8a205c80cc93f521cb2e2}
+
+
+copy texture to renderer ~\newline
+ Use this function to draw an image texture in window ~\newline
+
+
+
+\begin{DoxyCode}
+1 SDL\_Texture * texture\_balles =SDLS\_loadImage("images//balles.png"); // load image texture in RAM
+2 SDL\_Rect SDLS\_copyTexture(texture\_balles, SDLS\_getScreenWidth()/2,SDLS\_getScreenHeight()/2);// copy in
+       video buffer in the middle of windows
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & position of texture in windows \\
+\hline
+{\em y} & position of texture in windows \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+D\+L\+\_\+\+Rect rectangle created from texture 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+copy\+Texture\+Ex@{S\+D\+L\+S\+\_\+copy\+Texture\+Ex}}
+\index{S\+D\+L\+S\+\_\+copy\+Texture\+Ex@{S\+D\+L\+S\+\_\+copy\+Texture\+Ex}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+copy\+Texture\+Ex(\+S\+D\+L\+\_\+\+Texture $\ast$tex, S\+D\+L\+\_\+\+Rect src, S\+D\+L\+\_\+\+Rect dst)}{SDLS_copyTextureEx(SDL_Texture *tex, SDL_Rect src, SDL_Rect dst)}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+D\+L\+S\+\_\+copy\+Texture\+Ex (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Texture $\ast$}]{tex, }
+\item[{S\+D\+L\+\_\+\+Rect}]{src, }
+\item[{S\+D\+L\+\_\+\+Rect}]{dst}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_aa4a1a3141835696ba91a44f0e520791f}{}\label{_s_d_l_s_8c_aa4a1a3141835696ba91a44f0e520791f}
+
+
+copy only a part of image source texture (S\+D\+L\+\_\+\+Rect src) to a to a (S\+D\+L\+\_\+\+Rect dst) renderer ~\newline
+ Use this function to draw a part of image texture in window ~\newline
+
+
+
+\begin{DoxyCode}
+1 SDL\_Rect gSpriteSourceBalle[ 4 ]=
+2                                         \{\{0,0,25,25\}, //balle rouge
+3                                         \{25,0,25,25\}, //balle verte
+4                                         \{0,25,25,25\},  //balle jaune
+5                                         \{25,25,25,25\}\}; //balle bleu
+6 SDL\_Rect gDestBalle= \{62,62,25,25\}; // position dans la fenêtre
+7 
+8 SDL\_Texture * texture\_balles =SDLS\_loadImage("images//balles.png"); // copy image (4 balles of size 25x25)
+       in texture
+9 SDLS\_copyTextureEx(texture\_balles,gSpriteSourceBalle[0],gDestBalle); // display first balle in rectangle
+       gDestBalle of window
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tex} & texture to copy to window \\
+\hline
+{\em src} & rectangle inside texture (a part of image) you want to copy \\
+\hline
+{\em dst} & rectangle where to copy inside window \\
+\hline
+\end{DoxyParams}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+display\+All@{S\+D\+L\+S\+\_\+display\+All}}
+\index{S\+D\+L\+S\+\_\+display\+All@{S\+D\+L\+S\+\_\+display\+All}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+display\+All()}{SDLS_displayAll()}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+D\+L\+S\+\_\+display\+All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a139692381ca40eb058ee477b4f561189}{}\label{_s_d_l_s_8c_a139692381ca40eb058ee477b4f561189}
+
+
+use this function after creating shape and texture to display in window~\newline
+ use of double buffering \+: all operation before this function are put in video R\+AM but not displayed 
+
+
+\begin{DoxyCode}
+1 SDLS\_init("Hello World");
+2  SDLS\_setColor(255,0,0); //  red color
+3  SDLS\_drawLineRect(50,50,100,20); // rectangle in 50,50 size 100x20
+4  SDLS\_displayAll(); // copy cached Video Buffer to Video buffer
+5  SDL\_Delay(3000); // wait 3s to see the window
+6  SDLS\_cleanup();  // erase memory
+\end{DoxyCode}
+ \index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+draw\+Fill\+Rect@{S\+D\+L\+S\+\_\+draw\+Fill\+Rect}}
+\index{S\+D\+L\+S\+\_\+draw\+Fill\+Rect@{S\+D\+L\+S\+\_\+draw\+Fill\+Rect}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+draw\+Fill\+Rect(int x, int y, int w, int h)}{SDLS_drawFillRect(int x, int y, int w, int h)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Rect S\+D\+L\+S\+\_\+draw\+Fill\+Rect (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a06b7cd0886525ff5480b8e90a5aaf684}{}\label{_s_d_l_s_8c_a06b7cd0886525ff5480b8e90a5aaf684}
+
+
+drawing a filled rectangle in window from position x,y first and size w$\ast$h ~\newline
+ Example \+: setting color and drawing line rectangle 
+
+
+\begin{DoxyCode}
+1 SDLS\_setColor(0,0,255); //  blue color
+2 SDLS\_drawFillRect(50,50,100,20); // rectangle in 50,50 size 100x20
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & X top left position \\
+\hline
+{\em y} & Y top left position \\
+\hline
+{\em w} & width \\
+\hline
+{\em h} & height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+D\+L\+\_\+\+Rect rectangle created 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+draw\+Line@{S\+D\+L\+S\+\_\+draw\+Line}}
+\index{S\+D\+L\+S\+\_\+draw\+Line@{S\+D\+L\+S\+\_\+draw\+Line}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+draw\+Line(int x1, int y1, int x2, int y2)}{SDLS_drawLine(int x1, int y1, int x2, int y2)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Rect S\+D\+L\+S\+\_\+draw\+Line (
+\begin{DoxyParamCaption}
+\item[{int}]{x1, }
+\item[{int}]{y1, }
+\item[{int}]{x2, }
+\item[{int}]{y2}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a94a8471f3e10dc229e7a0349eb91f4c1}{}\label{_s_d_l_s_8c_a94a8471f3e10dc229e7a0349eb91f4c1}
+
+
+drawing a line in window from x1,y1 first point to second point x2,y2 ~\newline
+ Example \+: setting color and drawing line 
+
+
+\begin{DoxyCode}
+1 SDLS\_setColor(0,255,0); //  green color
+2 SDLS\_drawLine(50,50,100,20); // line from 50,50 to 100,20
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x1} & X position of first point \\
+\hline
+{\em y1} & Y position of first point \\
+\hline
+{\em x2} & X position of second point \\
+\hline
+{\em y2} & Y position of second point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+D\+L\+\_\+\+Rect rectangle created 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+draw\+Line\+Rect@{S\+D\+L\+S\+\_\+draw\+Line\+Rect}}
+\index{S\+D\+L\+S\+\_\+draw\+Line\+Rect@{S\+D\+L\+S\+\_\+draw\+Line\+Rect}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+draw\+Line\+Rect(int x, int y, int w, int h)}{SDLS_drawLineRect(int x, int y, int w, int h)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Rect S\+D\+L\+S\+\_\+draw\+Line\+Rect (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_aa33fb0d50840e9163294cc07409f7f83}{}\label{_s_d_l_s_8c_aa33fb0d50840e9163294cc07409f7f83}
+
+
+drawing a line rectangle in window from position x,y first and size w$\ast$h ~\newline
+ Example \+: setting color and drawing line rectangle 
+
+
+\begin{DoxyCode}
+1 SDLS\_setColor(255,0,0); //  red color
+2 SDLS\_drawLineRect(50,50,100,20); // rectangle in 50,50 size 100x20
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em x} & X top left position \\
+\hline
+{\em y} & Y top left position \\
+\hline
+{\em w} & width \\
+\hline
+{\em h} & height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+D\+L\+\_\+\+Rect rectangle created 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+draw\+Point@{S\+D\+L\+S\+\_\+draw\+Point}}
+\index{S\+D\+L\+S\+\_\+draw\+Point@{S\+D\+L\+S\+\_\+draw\+Point}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+draw\+Point(int x, int y)}{SDLS_drawPoint(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+D\+L\+S\+\_\+draw\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_aa93e468e9c99f55d191cb5ccff925ab5}{}\label{_s_d_l_s_8c_aa93e468e9c99f55d191cb5ccff925ab5}
+
+
+drawing a pixel in window in position x,y ~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position of point \\
+\hline
+{\em y} & Y position of point \\
+\hline
+\end{DoxyParams}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+erase\+With\+Background\+Color@{S\+D\+L\+S\+\_\+erase\+With\+Background\+Color}}
+\index{S\+D\+L\+S\+\_\+erase\+With\+Background\+Color@{S\+D\+L\+S\+\_\+erase\+With\+Background\+Color}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+erase\+With\+Background\+Color(int r, int g, int b)}{SDLS_eraseWithBackgroundColor(int r, int g, int b)}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+D\+L\+S\+\_\+erase\+With\+Background\+Color (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{g, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_aa0cca2ad329a916f149af068671bac0c}{}\label{_s_d_l_s_8c_aa0cca2ad329a916f149af068671bac0c}
+
+
+Erase window with a background color ~\newline
+ Use this function before drawing texture or shape ~\newline
+. 
+
+
+\begin{DoxyCode}
+1 SDLS\_eraseWithBackgroundColor(255,255,255); // white background color
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em r} & R\+ED color , 0 to 255 \\
+\hline
+{\em g} & G\+R\+E\+EN color , 0 to 255 \\
+\hline
+{\em b} & B\+L\+UE color , 0 to 255 \\
+\hline
+\end{DoxyParams}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+get\+Color@{S\+D\+L\+S\+\_\+get\+Color}}
+\index{S\+D\+L\+S\+\_\+get\+Color@{S\+D\+L\+S\+\_\+get\+Color}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+get\+Color(int r, int g, int b)}{SDLS_getColor(int r, int g, int b)}}]{\setlength{\rightskip}{0pt plus 5cm}Uint32 S\+D\+L\+S\+\_\+get\+Color (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{g, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a5d8151fcc843fcd180aad0bd3240f7c3}{}\label{_s_d_l_s_8c_a5d8151fcc843fcd180aad0bd3240f7c3}
+
+
+get Uint32 color code from R,G,B parameter ~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & R\+ED color , 0 to 255 \\
+\hline
+{\em g} & G\+R\+E\+EN color , 0 to 255 \\
+\hline
+{\em b} & B\+L\+UE color , 0 to 255 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+color \+: example S\+D\+L\+S\+\_\+get\+Color(255,0,0) return 0x\+F\+F0000 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+getpixels@{S\+D\+L\+S\+\_\+getpixels}}
+\index{S\+D\+L\+S\+\_\+getpixels@{S\+D\+L\+S\+\_\+getpixels}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+getpixels(\+Uint32 $\ast$pixels, int w, int h)}{SDLS_getpixels(Uint32 *pixels, int w, int h)}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+D\+L\+S\+\_\+getpixels (
+\begin{DoxyParamCaption}
+\item[{Uint32 $\ast$}]{pixels, }
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_aeac34eae4a52f69fbfd869b7a5b8fd48}{}\label{_s_d_l_s_8c_aeac34eae4a52f69fbfd869b7a5b8fd48}
+
+
+getting an array of pixel of window displayed ~\newline
+ You can use this function with S\+D\+L\+S\+\_\+putpixels and change pixels of your window ~\newline
+
+
+
+\begin{DoxyCode}
+1 // darking a zone on position 100,100 and size 20,100 of window. You need to init the window before
+2 Uint32 * pixels;
+3 pixels = (Uint32*) malloc(SDLS\_getScreenHeight()*SDLS\_getScreenHeight()*sizeof(Uint32)); // creation d'un
+       tableau de pixel à la taille de la fenêtre
+4 SDLS\_getpixels(pixels,SCREEN\_WIDTH,SCREEN\_HEIGHT); // copy de la fenêtre dans le tableau pixels
+5 for(int i=0;i<20;i++)
+6    for(int j=0;j<100;j++)
+7    \{
+8         int val = pixel[100+i][100+j]; // recup pixel position 100+i et 100+j (rectangle de 20 par 100)
+9         int cr =  ((val)&0xFF0000) >> 16; // récup couleur rouge du pixel
+10         int cg =  ((val)&0xFF00) >> 8;  // recup couleur verte du pixel
+11         int cb =  ((val)&0xFF); // recup couleur bleue du pixel
+12         cr >>= 1 ;  // division par 2 de la valeur de la couleur, on assombri cette zone
+13         cg >>= 1 ;
+14         cb >>= 1 ;
+15    \}
+16    SDLS\_putpixels(pixels,SCREEN\_WIDTH,SCREEN\_HEIGHT);
+17 free(pixels);
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em pixels} & array of pixel from window \\
+\hline
+{\em w} & width of pixel to get \\
+\hline
+{\em h} & height of pixel to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of pixels copied 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+get\+Renderer@{S\+D\+L\+S\+\_\+get\+Renderer}}
+\index{S\+D\+L\+S\+\_\+get\+Renderer@{S\+D\+L\+S\+\_\+get\+Renderer}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+get\+Renderer()}{SDLS_getRenderer()}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Renderer $\ast$ S\+D\+L\+S\+\_\+get\+Renderer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a1371e0caed6f9405b302f544175f7e0a}{}\label{_s_d_l_s_8c_a1371e0caed6f9405b302f544175f7e0a}
+
+
+getting the renderer of window displayed, you need this param to display shape with S\+DL library if you don\textquotesingle{}t want use S\+D\+LS function 
+
+\begin{DoxyReturn}{Returns}
+renderer 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+get\+Screen\+Height@{S\+D\+L\+S\+\_\+get\+Screen\+Height}}
+\index{S\+D\+L\+S\+\_\+get\+Screen\+Height@{S\+D\+L\+S\+\_\+get\+Screen\+Height}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+get\+Screen\+Height()}{SDLS_getScreenHeight()}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+D\+L\+S\+\_\+get\+Screen\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a1b9b252ebe8fde389d7122a715cd834b}{}\label{_s_d_l_s_8c_a1b9b252ebe8fde389d7122a715cd834b}
+
+
+getting Height -\/$>$ 480 px by default 
+
+\begin{DoxyReturn}{Returns}
+Height of S\+C\+R\+E\+EN 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+get\+Screen\+Width@{S\+D\+L\+S\+\_\+get\+Screen\+Width}}
+\index{S\+D\+L\+S\+\_\+get\+Screen\+Width@{S\+D\+L\+S\+\_\+get\+Screen\+Width}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+get\+Screen\+Width()}{SDLS_getScreenWidth()}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+D\+L\+S\+\_\+get\+Screen\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_af8e50bb4d9c1087d9edfc6b68924f3f8}{}\label{_s_d_l_s_8c_af8e50bb4d9c1087d9edfc6b68924f3f8}
+
+
+getting width -\/$>$ 640 px by default 
+
+\begin{DoxyReturn}{Returns}
+Width of S\+C\+R\+E\+EN 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+init@{S\+D\+L\+S\+\_\+init}}
+\index{S\+D\+L\+S\+\_\+init@{S\+D\+L\+S\+\_\+init}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+init(const char $\ast$titre)}{SDLS_init(const char *titre)}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+D\+L\+S\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{titre}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a75205531dbfd4d3a3166e245227b9c12}{}\label{_s_d_l_s_8c_a75205531dbfd4d3a3166e245227b9c12}
+
+
+create window and renderer context, first function to call in main 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & of window when displayed \\
+\hline
+\end{DoxyParams}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+load\+Font@{S\+D\+L\+S\+\_\+load\+Font}}
+\index{S\+D\+L\+S\+\_\+load\+Font@{S\+D\+L\+S\+\_\+load\+Font}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+load\+Font(char $\ast$font, int taille)}{SDLS_loadFont(char *font, int taille)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+T\+F\+\_\+\+Font $\ast$ S\+D\+L\+S\+\_\+load\+Font (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{font, }
+\item[{int}]{taille}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a726e1ef2a32862e250398da12718e007}{}\label{_s_d_l_s_8c_a726e1ef2a32862e250398da12718e007}
+
+
+Loading Font before displaying a text ~\newline
+ Use this function to load a font before use of S\+D\+L\+S\+\_\+load\+Text to display a text in window ~\newline
+. 
+
+
+\begin{DoxyCode}
+1 TTF\_Font * ttfFont2= SDLS\_loadFont("fonts\(\backslash\)\(\backslash\)arial.ttf",15);// load font in RAM, size 15
+2 SDL\_Texture *texture\_text2= SDLS\_loadText(ttfFont1,"text to print", 0,0,0); // copy text to print (in black
+       color) to texture
+3 SDLS\_copyTexture(texture\_text2,200,100); // copy texture to window on position 200,100
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em font} & ttf format font file \\
+\hline
+{\em taille} & size of font \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+T\+F\+\_\+\+Font$\ast$ structure of F\+O\+NT 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+load\+Image@{S\+D\+L\+S\+\_\+load\+Image}}
+\index{S\+D\+L\+S\+\_\+load\+Image@{S\+D\+L\+S\+\_\+load\+Image}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+load\+Image(char $\ast$name)}{SDLS_loadImage(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Texture $\ast$ S\+D\+L\+S\+\_\+load\+Image (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_ad6c27fd6e5502847ca73fb30f990cf0a}{}\label{_s_d_l_s_8c_ad6c27fd6e5502847ca73fb30f990cf0a}
+
+
+loading image in a texture (V\+R\+AM), image can be bmp, png, jpg,... format ~\newline
+Example \+: 
+
+
+\begin{DoxyCode}
+1 SDL\_Texture * texture\_fond =SDLS\_loadImage("images//elephant.png");
+2   SDLS\_copyTexture(texture\_fond, 0,0);// copy in video buffer in the top left
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em path} & and name of file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+texture 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+load\+Text@{S\+D\+L\+S\+\_\+load\+Text}}
+\index{S\+D\+L\+S\+\_\+load\+Text@{S\+D\+L\+S\+\_\+load\+Text}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+load\+Text(\+T\+T\+F\+\_\+\+Font $\ast$font, char $\ast$sz, int r, int g, int b)}{SDLS_loadText(TTF_Font *font, char *sz, int r, int g, int b)}}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Texture $\ast$ S\+D\+L\+S\+\_\+load\+Text (
+\begin{DoxyParamCaption}
+\item[{T\+T\+F\+\_\+\+Font $\ast$}]{font, }
+\item[{char $\ast$}]{sz, }
+\item[{int}]{r, }
+\item[{int}]{g, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_ad8193a9d3dd61d9811b17cee936f7507}{}\label{_s_d_l_s_8c_ad8193a9d3dd61d9811b17cee936f7507}
+
+
+putting text into texture ~\newline
+ Use this function to load text to display in window, you need to load font before using this function ~\newline
+
+
+
+\begin{DoxyCode}
+1 TTF\_Font * ttfFont2= SDLS\_loadFont("fonts\(\backslash\)\(\backslash\)arial.ttf",15);// load font in RAM, size 15
+2 SDL\_Texture *texture\_text2= SDLS\_loadText(ttfFont1,"text to print", 0,0,0); // copy text to print (in black
+       color) to texture
+3 SDLS\_copyTexture(texture\_text2,200,100); // copy texture to window on position 200,100
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em font} & ttf structure returned by S\+D\+L\+S\+\_\+load\+Font \\
+\hline
+{\em sz} & text to print \\
+\hline
+{\em r} & R\+ED color , 0 to 255 \\
+\hline
+{\em g} & G\+R\+E\+EN color , 0 to 255 \\
+\hline
+{\em b} & B\+L\+UE color , 0 to 255 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+D\+L\+\_\+\+Texture$\ast$ texture to copy to window 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+putpixels@{S\+D\+L\+S\+\_\+putpixels}}
+\index{S\+D\+L\+S\+\_\+putpixels@{S\+D\+L\+S\+\_\+putpixels}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+putpixels(\+Uint32 $\ast$pixels, int w, int h)}{SDLS_putpixels(Uint32 *pixels, int w, int h)}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+D\+L\+S\+\_\+putpixels (
+\begin{DoxyParamCaption}
+\item[{Uint32 $\ast$}]{pixels, }
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a188d3ef96957fdc831fc5b8574af376f}{}\label{_s_d_l_s_8c_a188d3ef96957fdc831fc5b8574af376f}
+
+
+putting an array of pixel in window displayed ~\newline
+ see S\+L\+D\+S\+\_\+getpixels to see an example ~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixels} & array of pixel from window \\
+\hline
+{\em w} & width of pixel to get \\
+\hline
+{\em h} & height of pixel to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of pixels copied 
+\end{DoxyReturn}
+\index{S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}!S\+D\+L\+S\+\_\+set\+Color@{S\+D\+L\+S\+\_\+set\+Color}}
+\index{S\+D\+L\+S\+\_\+set\+Color@{S\+D\+L\+S\+\_\+set\+Color}!S\+D\+L\+S.\+c@{S\+D\+L\+S.\+c}}
+\subsubsection[{\texorpdfstring{S\+D\+L\+S\+\_\+set\+Color(int r, int g, int b)}{SDLS_setColor(int r, int g, int b)}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+D\+L\+S\+\_\+set\+Color (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{g, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{_s_d_l_s_8c_a9ca4cfe7300c96dc8e368c40eee123cd}{}\label{_s_d_l_s_8c_a9ca4cfe7300c96dc8e368c40eee123cd}
+
+
+choosing a color for the next shape ~\newline
+ Use this function before drawing texture or shape ~\newline
+
+
+
+\begin{DoxyCode}
+1 SDLS\_setColor(0,0,0); //  black color
+2 SDLS\_drawLine(50,50,100,20); // drawing a line from 50,50 to 100,20
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em r} & R\+ED color , 0 to 255 \\
+\hline
+{\em g} & G\+R\+E\+EN color , 0 to 255 \\
+\hline
+{\em b} & B\+L\+UE color , 0 to 255 \\
+\hline
+\end{DoxyParams}
