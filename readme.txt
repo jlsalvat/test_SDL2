@@ -24,7 +24,7 @@ SDL2 : folder contain include and library SDL2 used by main folder
 main : folder contain projects and library 
 -------biblio : user libraries folder  SDLS.c and net.c 
 -------bin : used by code::block to generate exe file
--------doc\html\index.html  : html help documents on SDLS.c 
+-------doc\html\index.html(https://github.com/jlsalvat/test_SDL2/blob/master/main/docs/html/index.html)  : html help documents on SDLS.c 
 -------fonts : fonts folder, you can download new font inside this folder
 -------images : images folder, you can download images (jpeg, png,...)
 -------obj : used by code::block when compile
