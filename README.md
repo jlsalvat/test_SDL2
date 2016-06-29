@@ -29,6 +29,6 @@
   * -------fonts : fonts folder, you can download new font inside this folder
   * -------images : images folder, you can download images (jpeg, png,...)
   * -------obj : used by code::block when compile
-  -------test : main test program using biblio folder
+  * -------test : main test program using biblio folder
 
 
